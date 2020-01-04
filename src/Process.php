@@ -127,6 +127,8 @@ class Process implements ProcessInterface
     public const EVENT_FORK_PARENT = 'fork-parent';
     // child context, just after fork
     public const EVENT_FORK_CHILD = 'fork-child';
+    // parent context, on test when child still running
+    public const EVENT_RUNNING = 'running';
     // parent context, when child has terminated
     public const EVENT_TERMINATE = 'terminate';
     // parent context, after removing process reference from children array

@@ -237,6 +237,7 @@ abstract class Daemon
             if (!$child->isRunning()) return;
             if ($child->checkRunning($wait)) {
                 // still running but not waiting
+                $child->triggerEvent(Process::EVENT_RUNNING);
 //                 $this->log(LogLevel::DEBUG, sprintf('Child %d still running', $child->getPid()));
             } else {
                 if ($child->getExitStatus()) {
